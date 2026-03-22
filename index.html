@@ -1,181 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Ikai Vanguard — Comunidad de WhatsApp de anime, gaming, música y cultura japonesa. Únete a la vanguardia." />
-  <meta name="theme-color" content="#0a0a0f" />
-  <title>Ikai Vanguard · 異界ヴァンガード</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ikai Vanguard - Dashboard</title>
+  <meta name="description" content="Ikai Vanguard - panel de control" />
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar" id="navbar" role="banner">
-    <div class="navbar__container">
-      <a href="#inicio" class="navbar__brand" aria-label="Ikai Vanguard — inicio">
-        <span class="navbar__brand-title">IKAI VANGUARD</span>
-        <span class="navbar__brand-sub">異界ヴァンガード</span>
-      </a>
+  <div class="app" id="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar" aria-labelledby="brand-title" role="navigation">
+      <div class="brand" id="brand">
+        <img src="assets/ikai-logo-64.png" alt="Ikai Vanguard logo" class="brand__logo" loading="lazy" />
+        <h1 id="brand-title" class="brand__title">Ikai Vanguard</h1>
+      </div>
 
-      <nav class="navbar__nav" id="navMenu" aria-label="Navegación principal">
-        <ul class="navbar__list" role="list">
-          <li><a href="#inicio" class="navbar__link">Inicio</a></li>
-          <li><a href="#sobre-nosotros" class="navbar__link">Sobre Nosotros</a></li>
-          <li><a href="#categorias" class="navbar__link">Categorías</a></li>
-          <li><a href="#unete" class="navbar__link navbar__link--cta">Únete</a></li>
+      <nav class="nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#" class="nav-link"><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fa-regular fa-user"></i><span>Perfil</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fa-solid fa-shop"></i><span>Tienda</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fa-solid fa-cloud"></i><span>Cloud</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fa-solid fa-image"></i><span>Gallery</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fa-solid fa-ticket"></i><span>Abrir Ticket</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fa-solid fa-circle-check"></i><span>Status</span></a></li>
+          <li><a href="#" class="nav-link"><i class="fa-solid fa-code"></i><span>Docs</span></a></li>
         </ul>
       </nav>
 
-      <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
-        <span class="navbar__bar"></span>
-        <span class="navbar__bar"></span>
-        <span class="navbar__bar"></span>
-      </button>
+      <div class="sidebar-footer" aria-hidden="true">
+        <small>Ikai Vanguard • mi pagina :)</small>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main" id="main">
+      <header class="topbar" role="banner">
+        <div class="topbar-left">
+          <button id="btnToggle" class="btn icon" aria-controls="sidebar" aria-expanded="true" title="Mostrar/ocultar menú">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            <span class="sr-only">Toggle menu</span>
+          </button>
+          <button id="themeToggle" class="btn icon" title="Cambiar tema" aria-pressed="false">
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            <span class="sr-only">Cambiar tema</span>
+          </button>
+        </div>
+
+        <div class="search" role="search">
+          <label for="searchInput" class="sr-only">Buscar</label>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input id="searchInput" type="search" placeholder="Buscar..." aria-label="Buscar en Ikai Vanguard" />
+        </div>
+
+        <div class="topbar-actions" role="toolbar" aria-label="Acciones">
+          <button class="icon" title="Notificaciones"><i class="fa-regular fa-bell"></i></button>
+          <button class="icon" title="Modo oscuro"><i class="fa-solid fa-sun"></i></button>
+        </div>
+      </header>
+
+      <main class="content-area" role="main" tabindex="-1">
+        <section class="welcome" aria-labelledby="welcome-title">
+          <img src="assets/avatar.jpg" alt="Avatar de usuario" class="avatar" loading="lazy" width="92" height="92" />
+          <div>
+            <h2 id="welcome-title" class="welcome__title">BIENVENIDO</h2>
+            <p class="welcome__subtitle">Hola, liud15. Bienvenido a Ikai Vanguard.</p>
+          </div>
+        </section>
+
+        <section class="announcement" aria-labelledby="announce-title" role="region">
+          <div class="announcement__inner">
+            <h3 id="announce-title">¡Llegó Ikai Vanguard Suite V2.8! ⚡ MASSIVE UPDATE</h3>
+            <p class="muted">Mejoras, nuevas herramientas y actualizaciones del ecosistema.</p>
+            <ul class="features" aria-hidden="false">
+              <li><strong>Novedades Principales:</strong></li>
+              <li>Ikai Storage: Subida y tráfico ilimitado (demo).</li>
+              <li>Ikai API: Herramientas nuevas (ej.: conversores, emoji-mix).</li>
+              <li>Ikai Cloud: Visor inteligente con IA y descargas directas.</li>
+            </ul>
+            <p><a class="announcement__link" href="#" aria-label="Ver todas las novedades">Revisa todas las novedades</a></p>
+          </div>
+        </section>
+
+        <section class="grid" aria-label="Widgets">
+          <article class="card" role="article" aria-labelledby="card1">
+            <h4 id="card1">Panel</h4>
+            <p>Widgets y métricas (placeholder).</p>
+          </article>
+          <article class="card" role="article" aria-labelledby="card2">
+            <h4 id="card2">Configuración</h4>
+            <p>Accesos rápidos y preferencias.</p>
+          </article>
+          <article class="card" role="article" aria-labelledby="card3">
+            <h4 id="card3">Activity</h4>
+            <p>Últimas acciones y logs (demo).</p>
+          </article>
+        </section>
+      </main>
     </div>
-  </header>
 
-  <main>
-
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="inicio" aria-label="Sección principal">
-      <canvas class="hero__canvas" id="particleCanvas" aria-hidden="true"></canvas>
-      <div class="hero__content">
-        <h1 class="hero__title glitch" data-text="IKAI VANGUARD">IKAI VANGUARD</h1>
-        <p class="hero__subtitle">異界ヴァンガード</p>
-        <p class="hero__description">
-          La comunidad de WhatsApp donde el anime, el gaming, la música y la cultura japonesa
-          se encuentran en una sola vanguardia.
-        </p>
-        <a href="#" class="btn btn--primary btn--lg" aria-label="Únete al grupo de WhatsApp">
-          <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="20" height="20">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.86L.057 23.882a.5.5 0 0 0 .61.61l6.098-1.528A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 0 1-5.003-1.369l-.358-.213-3.717.931.974-3.641-.234-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
-          </svg>
-          Únete a WhatsApp
-        </a>
-      </div>
-      <div class="hero__scroll-hint" aria-hidden="true">
-        <span class="hero__scroll-arrow"></span>
-      </div>
-    </section>
-
-    <!-- ===== SOBRE NOSOTROS ===== -->
-    <section class="about" id="sobre-nosotros" aria-labelledby="about-heading">
-      <div class="container">
-        <header class="section-header">
-          <h2 class="section-header__title" id="about-heading">Sobre Nosotros</h2>
-          <p class="section-header__sub">Who We Are</p>
-        </header>
-
-        <p class="about__description">
-          <strong>Ikai Vanguard</strong> es una comunidad activa de WhatsApp donde apasionados
-          del anime, el gaming, la música y la cultura japonesa se reúnen para compartir,
-          descubrir y conectar. Sin barreras, sin límites — solo vanguardia.
-        </p>
-
-        <div class="cards-grid cards-grid--3">
-          <article class="card" aria-label="Más de 500 miembros">
-            <div class="card__icon" aria-hidden="true">👥</div>
-            <h3 class="card__stat">500+</h3>
-            <p class="card__label">Miembros</p>
-          </article>
-          <article class="card" aria-label="Activos las 24 horas, 7 días a la semana">
-            <div class="card__icon" aria-hidden="true">⚡</div>
-            <h3 class="card__stat">24/7</h3>
-            <p class="card__label">Siempre Activos</p>
-          </article>
-          <article class="card" aria-label="Comunidad libre y sin censura innecesaria">
-            <div class="card__icon" aria-hidden="true">🌐</div>
-            <h3 class="card__stat">100%</h3>
-            <p class="card__label">Comunidad Libre</p>
-          </article>
+    <!-- Floating player (draggable) -->
+    <div class="player" id="player" role="region" aria-label="Reproductor">
+      <div class="player__header" id="playerHeader">
+        <div class="player__meta"><strong id="playerTitle">—</strong></div>
+        <div class="player__actions">
+          <button class="icon" id="playerMin" title="Minimizar" aria-label="Minimizar reproductor"><i class="fa-solid fa-minus"></i></button>
+          <button class="icon" id="playerClose" title="Cerrar" aria-label="Cerrar reproductor"><i class="fa-solid fa-xmark"></i></button>
         </div>
       </div>
-    </section>
 
-    <!-- ===== CATEGORÍAS ===== -->
-    <section class="categories" id="categorias" aria-labelledby="categories-heading">
-      <div class="container">
-        <header class="section-header">
-          <h2 class="section-header__title" id="categories-heading">Categorías</h2>
-          <p class="section-header__sub">Our Interests</p>
-        </header>
+      <div class="player__body">
+        <div class="controls">
+          <button id="prevBtn" class="icon" title="Anterior"><i class="fa-solid fa-backward-step"></i></button>
+          <button id="playBtn" class="play" aria-pressed="false" title="Reproducir/Pausar"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+          <button id="nextBtn" class="icon" title="Siguiente"><i class="fa-solid fa-forward-step"></i></button>
+        </div>
 
-        <div class="cards-grid cards-grid--auto">
-          <article class="card card--category">
-            <div class="card__icon card__icon--lg" aria-hidden="true">🎮</div>
-            <h3 class="card__name">Gaming</h3>
-            <p class="card__desc">Videojuegos, torneos, reviews y todo lo que el mundo gamer tiene para ofrecer.</p>
-          </article>
-          <article class="card card--category">
-            <div class="card__icon card__icon--lg" aria-hidden="true">🎵</div>
-            <h3 class="card__name">Música</h3>
-            <p class="card__desc">J-Pop, City Pop, OSTs épicos, lo-fi y la música que define nuestra era.</p>
-          </article>
-          <article class="card card--category">
-            <div class="card__icon card__icon--lg" aria-hidden="true">⚔️</div>
-            <h3 class="card__name">Anime / Manga</h3>
-            <p class="card__desc">Discusiones, recomendaciones y teorías sobre lo mejor del anime y manga.</p>
-          </article>
-          <article class="card card--category">
-            <div class="card__icon card__icon--lg" aria-hidden="true">🌸</div>
-            <h3 class="card__name">Cultura Japonesa</h3>
-            <p class="card__desc">Idioma, tradiciones, festivales y todo lo que hace única a la cultura de Japón.</p>
-          </article>
-          <article class="card card--category">
-            <div class="card__icon card__icon--lg" aria-hidden="true">🤖</div>
-            <h3 class="card__name">Mecha / Robots</h3>
-            <p class="card__desc">Gundam, Evangelion, Code Geass y el universo infinito del mecha.</p>
-          </article>
+        <div class="progress-wrap" aria-hidden="false">
+          <input id="progress" type="range" min="0" max="100" value="0" aria-label="Progreso de la pista" />
+          <div class="time">
+            <span id="curTime">0:00</span> / <span id="durTime">0:00</span>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- ===== ÚNETE ===== -->
-    <section class="join" id="unete" aria-labelledby="join-heading">
-      <div class="join__bg" aria-hidden="true"></div>
-      <div class="container join__content">
-        <h2 class="join__title" id="join-heading">¿Listo para unirte a la vanguardia?</h2>
-        <p class="join__sub">準備はできていますか？</p>
-        <p class="join__desc">
-          Sé parte de Ikai Vanguard y comparte tu pasión con cientos de personas que sienten lo mismo que tú.
-        </p>
-        <a href="#" class="btn btn--whatsapp btn--xl" aria-label="Únete ahora al grupo de WhatsApp de Ikai Vanguard">
-          <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="24" height="24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.86L.057 23.882a.5.5 0 0 0 .61.61l6.098-1.528A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.805 9.805 0 0 1-5.003-1.369l-.358-.213-3.717.931.974-3.641-.234-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
-          </svg>
-          Únete Ahora
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer__container">
-      <div class="footer__brand">
-        <span class="footer__brand-title">IKAI VANGUARD</span>
-        <span class="footer__brand-sub">異界ヴァンガード</span>
-      </div>
-
-      <nav class="footer__nav" aria-label="Navegación del pie de página">
-        <a href="#inicio" class="footer__link">Inicio</a>
-        <a href="#sobre-nosotros" class="footer__link">Sobre Nosotros</a>
-        <a href="#categorias" class="footer__link">Categorías</a>
-        <a href="#unete" class="footer__link">Únete</a>
-      </nav>
-
-      <div class="footer__divider" aria-hidden="true"></div>
-      <p class="footer__copy">© 2026 Ikai Vanguard · ikai.space</p>
+      <!-- Actual audio element -->
+      <audio id="audio" preload="metadata"></audio>
     </div>
-  </footer>
+  </div>
 
-  <script src="js/main.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
